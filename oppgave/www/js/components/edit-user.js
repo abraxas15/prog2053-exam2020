@@ -9,7 +9,7 @@ class EditUser extends LitElement {
   render() {
     return html`
     <head>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
     <form onsubmit="javascript: return false;" id="userForm" method="POST">
     <div class="form-group pt-3 ml-5" style="width: 20rem;">
@@ -22,15 +22,15 @@ class EditUser extends LitElement {
       <input class="form-control" id="firstName" name="firstName" type="text" value="${this.user.firstName}" required>
     </div>
     <div class="form-group pt-1 ml-5" style="width: 20rem;">
-      <label for="lastName">Last Name</label>
+      <label for="lastName">Surname</label>
       <input class="form-control" id="lastName" name="lastName" type="text" value="${this.user.lastName}" required>
     </div>
     <div class="form-group pt-1 ml-5" style="width: 20rem;">
-      <label for="oldpwd">Old Password</label>
-      <input type="password" class="form-control" id="oldpwd" name="oldpwd" type="text" value="">
+      <label for="prPwd">Previous Password</label>
+      <input type="password" class="form-control" id="prPwd" name="prPwd" type="text" value="">
     </div>
     <div class="form-group pt-1 ml-5" style="width: 20rem;">
-      <label for="newpwd">New Password</label>
+      <label for="newPwd">New Password</label>
       <input type="password" class="form-control" id="pwd" name="pwd" type="text" value="">
   </div>
   <input type="submit" @click=${this.updateUser} id="submitForm" name="editUser" class="btn btn-info mt-4 ml-2" value="Edit User"></input>
