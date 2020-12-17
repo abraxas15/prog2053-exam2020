@@ -26,11 +26,11 @@ class EditUser extends LitElement {
       <input class="form-control" id="lastName" name="lastName" type="text" value="${this.user.lastName}" required>
     </div>
     <div class="form-group pt-1 ml-5" style="width: 20rem;">
-      <label for="prPwd">Previous Password</label>
-      <input type="password" class="form-control" id="prPwd" name="prPwd" type="text" value="">
+      <label for="oldPwd">Previous Password</label>
+      <input type="password" class="form-control" id="oldPwd" name="oldPwd" type="text" value="">
     </div>
     <div class="form-group pt-1 ml-5" style="width: 20rem;">
-      <label for="newPwd">New Password</label>
+      <label for="Pwd">New Password</label>
       <input type="password" class="form-control" id="pwd" name="pwd" type="text" value="">
   </div>
   <input type="submit" @click=${this.updateUser} id="submitForm" name="editUser" class="btn btn-info mt-4 ml-2" value="Edit User"></input>
@@ -45,8 +45,9 @@ class EditUser extends LitElement {
   fetch('api/updateUser.php', {
    method: 'POST',
    body: dataForm
-  }).then(res=>res.json())
-    .then(data=>{
+  }
+  ).then(res => res.json()
+  ).then(data => {
       if (data.status=='success') {
           console.log("The user was updated!");
       } else {

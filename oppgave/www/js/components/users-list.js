@@ -26,6 +26,7 @@ class UsersList extends LitElement {
     fetch('api/fetchUsers.php')
     .then(response => response.json())
     .then(data => this.users = data);
+
   }
 
   setSelectedUser(e, user) {
