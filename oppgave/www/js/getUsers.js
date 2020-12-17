@@ -18,6 +18,22 @@ function getAllUsers() {
     });
 }
 
+function getUser(e){
+    var user = document.getElementById("user");
+    user.style.display = "block";
+    fetch("api/fetchUser.php?id=" + e.toString(), {
+  
+    }).then(res=>res.json())
+    .then(data=>{
+
+        //puts info about user inside the HTML form
+        document.getElementById("lastName").value = data.lastName;
+        document.getElementById("uid").value = e;
+        document.getElementById("firstName").value = data.firstName;
+        document.getElementById("uname").value = data.uname;
+
+    });
+}
 document.getElementById("submitForm").addEventListener('click', e=>{
     const dataForm = new FormData(e.target.form);
     fetch('api/updateUser.php', {
